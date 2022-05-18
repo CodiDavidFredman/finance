@@ -23,3 +23,4 @@ function updateForm(arr){
    }
 }
 updateForm(form());
+console.log("123");
