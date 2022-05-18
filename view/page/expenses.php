@@ -1,9 +1,10 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT']."/controler/page/expenses.php"; ?>
 <div class="title"><?=$lung['title'];?></div>
 <form name='consumption' action="/function/addExpense.php" method="get">
+
     <?php foreach($data as $val => $inputs):?>
     <div class="line-form">
-        <!--<label for="<?=$val;?>"> <?=$lung[$val];?></label>-->
+        <!--<label for="<?=$val;?>"><?=$lung[$val];?></label>-->
         <select style="width:320px;" required name="<?=$val;?>" id="<?=$val;?>">
             <option label disabled selected ><?=$lung[$val];?></option>
             <?php foreach($inputs as $input):?>
