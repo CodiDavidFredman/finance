@@ -128,3 +128,34 @@ section.form .block-form {
     right: 1px;
     width: 20px;
 }
+.select2-container--open .select2-dropdown--below {
+    border: none;
+}
+.select2-dropdown {
+    background: #ecf7f9;
+    margin-top: -1px;
+    border-radius: 0 0 17px 17px;
+    padding-bottom: 20px;
+}
+.select2-search {
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+.select2-results {
+    padding: 0 20px;
+}
+.select2-search__field {
+    outline: none;
+    border: none !important;
+    box-shadow: -2px 3px 43px -17px rgba(34, 60, 80, 0.2);
+}
+.select2-search__field:focus {
+    outline: none;
+}
+.date-deal {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.change_date {
+    display: none;
+}
