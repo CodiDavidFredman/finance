@@ -1,6 +1,7 @@
 $("#add_income").click(function(){
    $("section.form").css("display","flex");
 });
+console.log("22");
 
 
 // перебираем форму для отправки данных
