@@ -24,3 +24,16 @@ function updateForm(arr){
    }
 }
 updateForm(form());
+
+function formOpenDateDeal() {
+   const dateDeal = document.querySelectorAll('.date-deal')
+
+   dateDeal.forEach(item => {
+      item.addEventListener('click', function() {
+         this.style.display = 'none'
+         document.querySelector('.change_date').style.display = 'block'
+      })
+   })
+}
+
+formOpenDateDeal()
