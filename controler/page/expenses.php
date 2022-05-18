@@ -9,6 +9,5 @@ $data = array();
 foreach($params as $param){
     $data[$param] = qurery($mysql,$param);
 };
-
 $today = date("Y-m-d");
 ?>
