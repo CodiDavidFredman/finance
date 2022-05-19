@@ -27,7 +27,7 @@
         <span class="text_date_deal"><?=$lung['text_date_deal']?></span>
         <span class="clouse">clouse</span>
     </div>
-    <div class="line-form">
+    <div class="line-form change_date">
         <input required value="<?=$today;?>" name="date_add" type="date">
     </div>
     <?php endif;?>
