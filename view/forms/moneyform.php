@@ -2,7 +2,7 @@
     <div class="block-form">
 
         <?php 
-                include_once $_SERVER['DOCUMENT_ROOT']."/view/page/expenses.php"; 
+                include_once $_SERVER['DOCUMENT_ROOT']."/view/form/expenses.php"; 
         ?>
     </div>
 </section>

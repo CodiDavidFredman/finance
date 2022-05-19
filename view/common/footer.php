@@ -1,5 +1,5 @@
 </body>
-<?php include_once $_SERVER['DOCUMENT_ROOT']."/view/form/moneyform.php"; 
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/view/forms/moneyform.php"; 
 ?>
 <footer>
     <!-- js jquery 

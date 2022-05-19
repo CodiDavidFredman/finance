@@ -14,7 +14,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/controler/common/header.php";
      <!-- style -->
      <link rel="stylesheet" href="../app/style/style.css">
 </head>
-<body>
+<body> 
     <header>
        <button id="add_income"><?= $header_lung['income'];?></button>
        <button id="add_сost"><?= $header_lung['сost'];?></button>

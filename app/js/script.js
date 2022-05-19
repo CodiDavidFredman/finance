@@ -25,6 +25,8 @@ function updateForm(arr){
 }
 updateForm(form());
 
+
+// ПИШИ КОМЕНТАРІ щоб потім знати що воно робить
 function formOpenDateDeal() {
    const dateDeal = document.querySelectorAll('.date-deal')
 
