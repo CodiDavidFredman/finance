@@ -78,6 +78,11 @@ section.form .block-form {
 }
 section.form .title{
     font-size: var(--title-font-size);
+    display: flex;
+    justify-content: space-between;
+}
+section .close_form {
+    cursor: pointer;
 }
 section.form input {
     border: 0;
@@ -91,9 +96,11 @@ section.form input {
     padding: 0px 20px;
 }
 section.form select{
+    cursor: pointer;
     width: 100%!important;
 }
 section.form .block-form {
+    cursor: default;
     margin-top: 40px;
     max-width: 320px;
     width: 100%;
