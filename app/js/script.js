@@ -20,6 +20,12 @@ function updateForm(arr){
 updateForm(form());
 
 
+$(".add-second-level").click(function(){
+   $(".add-second-level").hide();
+   $(".second-level").show();
+})
+
+
 //  Функція по відкриванню змінної дати
 function formOpenDateDeal() {
    const dateDeal = document.querySelectorAll('.date-deal')
@@ -71,3 +77,7 @@ operstionButtons()
 
 
 
+
+
+
+// Валідація форми - доходи (consumption)
