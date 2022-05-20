@@ -1,7 +1,7 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT']."/controler/form/expenses.php"; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/controler/form/operation.php"; ?>
 <div class="title"><?=$lung['title'];?> <span class="close_form">X</span></div>
-<!-- /function/addExpense.php -->
-<form name='consumption' action="/function/addExpense.php" method="get">
+<!-- action="/function/addOperation.php" -->
+<form name='consumption'  method="get">
     <?php foreach($data as $val => $inputs):?>
     <div class="line-form">
         <!--<label for="<?=$val;?>"><?=$lung[$val];?></label>-->

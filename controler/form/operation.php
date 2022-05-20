@@ -1,6 +1,6 @@
 <?php 
-include_once $_SERVER['DOCUMENT_ROOT']."/model/form/expenses.php"; 
-include_once $_SERVER['DOCUMENT_ROOT']."/view/lung/expenses.php"; 
+include_once $_SERVER['DOCUMENT_ROOT']."/model/form/operation.php"; 
+include_once $_SERVER['DOCUMENT_ROOT']."/view/lung/operation.php"; 
 
 $second_level = array('project','points');
 $first_level = array('wallets','category','counterparty');
