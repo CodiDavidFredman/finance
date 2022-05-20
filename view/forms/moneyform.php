@@ -1,4 +1,4 @@
-<section class="form">
+<section class="form form_calculations">
     <div class="block-form">
 
         <?php 

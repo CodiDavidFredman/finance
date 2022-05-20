@@ -1,9 +1,3 @@
-$("#add_income").click(function(){
-   $("section.form").css("display","flex");
-});
-console.log("22");
-
-
 // перебираем форму для отправки данных
 function form (){
    let consumption = document.forms.consumption;
@@ -26,7 +20,7 @@ function updateForm(arr){
 updateForm(form());
 
 
-// ПИШИ КОМЕНТАРІ щоб потім знати що воно робить
+//  Функція по відкриванню змінної дати
 function formOpenDateDeal() {
    const dateDeal = document.querySelectorAll('.date-deal')
 
@@ -37,5 +31,43 @@ function formOpenDateDeal() {
       })
    })
 }
-
 formOpenDateDeal()
+
+//  операція кнопок дохід/витрати/перекази
+function operstionButtons() {
+
+   const sectionForm = document.querySelector('section.form')
+   const buttonsCalc = document.querySelectorAll('.button_calc')
+   const formCalc = document.querySelector('.form_calculations')
+
+   //  відкриваємо попап форму
+   function openForm() {
+      sectionForm.style.display = 'flex'
+   }
+   //  закриваємо попап форму
+   function closeForm(e) {
+      let elTraget = e.target
+
+      if (elTraget.classList.contains('close_form') ) {
+         sectionForm.style.display = 'none';
+      } else if (elTraget.closest('.block-form')) {
+         return
+      } else {
+         sectionForm.style.display = 'none';
+      }
+   }
+
+   // вішаємо слухачі на кнопки
+   buttonsCalc.forEach(button => {
+      button.addEventListener('click', openForm)
+   })
+
+   //  вішаємо слухач на форму
+   formCalc.addEventListener('click', e => closeForm(e))
+}
+operstionButtons()
+
+
+
+
+
