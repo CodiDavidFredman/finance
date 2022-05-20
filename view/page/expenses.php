@@ -1,5 +1,5 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT']."/controler/page/expenses.php"; ?>
-<div class="title"><?=$lung['title'];?></div>
+<div class="title"><?=$lung['title'];?> <span class="close_form">X</span></div>
 <form name='consumption' action="/function/addExpense.php" method="get">
 
     <?php foreach($data as $val => $inputs):?>
