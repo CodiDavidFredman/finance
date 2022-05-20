@@ -16,8 +16,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/controler/common/header.php";
 </head>
 <body>
     <header>
-       <button id="add_income"><?= $header_lung['income'];?></button>
-       <button id="add_сost"><?= $header_lung['сost'];?></button>
-       <button id="add_transfer"><?= $header_lung['transfer'];?></button>
+       <button id="add_income" class="button_calc"><?= $header_lung['income'];?></button>
+       <button id="add_сost" class="button_calc"><?= $header_lung['сost'];?></button>
+       <button id="add_transfer" class="button_calc"><?= $header_lung['transfer'];?></button>
     </header>
     
