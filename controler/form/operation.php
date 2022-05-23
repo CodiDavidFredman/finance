@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/model/form/operation.php";
 include_once $_SERVER['DOCUMENT_ROOT']."/view/lung/operation.php"; 
 
 $second_level = array('project','points');
-$first_level = array('wallets','category','counterparty');
+$first_level = array('wallets','category','consumable_services','counterparty');
 
 $data = array();
 $data_second_level = array();

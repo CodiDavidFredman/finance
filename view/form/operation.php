@@ -1,7 +1,8 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT']."/controler/form/operation.php"; ?>
 <div class="title"><?=$lung['title'];?> <span class="close_form">X</span></div>
 <!-- action="/function/addOperation.php" -->
-<form name='consumption'  method="get">
+<form name='consumption' id="consumption"  method="get">
+    <input hidden name="type_operation" id="type_operation" value="pluse">
     <?php foreach($data as $val => $inputs):?>
     <div class="line-form">
         <!--<label for="<?=$val;?>"><?=$lung[$val];?></label>-->
@@ -15,12 +16,12 @@
     <?php if($val === "wallets"):?>
     <div class="line-form">
         <!--<label for="sum"><?= $lung['sum'];?></label>-->
-        <input type="number" name="sum" id="sum" placeholder="<?= $lung['sum'];?>"> 
+        <input type="number" name="summ" id="summ" placeholder="<?= $lung['sum'];?>"> 
     </div>
     <?php endif;?>
     <?php if($val === "counterparty"):?>
     <div class="line-form">
-        <input required value="<?=$today;?>" name="date_send" type="date">
+        <input required value="<?=$today;?>" id="date_send" name="date_send" type="date">
     </div>
     <div class="date-deal">
         <span class="icon">
@@ -32,7 +33,7 @@
         </span>
     </div>
     <div class="line-form change_date">
-        <input required value="<?=$today;?>" name="date_add" type="date">
+        <input required value="<?=$today;?>" name="date_add" id="date_add" type="date">
     </div>
     <?php endif;?>
     <?php endforeach;?>
@@ -58,11 +59,63 @@
             </div>
         <?php endforeach;?>
                 <div class="line-form">
-                    <textarea name="comments" placeholder="<?=$lung['text_comments'];?>"></textarea>
+                    <textarea name="comments" id="comments" placeholder="<?=$lung['text_comments'];?>"></textarea>
                 </div>
     </div>
     
     
-    <button type="submit"> Відправити</button>
+    <button id="addOperation" type="button"> Відправити</button>
     <div class="error-block"></div>
 </form>
+
+
+<script>
+    if($(document).ready){
+        $("#addOperation").on('click',function(){
+        let wallets = $("#wallets").val();
+        let summ = $("#summ").val(); 
+        let category = $("#category").val(); 
+        let counterparty = $("#counterparty").val(); 
+        let consumable_services = $("#consumable_services").val();
+        let date_send = $("#date_send").val(); 
+        let date_add = $("#date_add").val(); 
+        let project = $("#project").val(); 
+        let points = $("#points").val(); 
+        let comments = $("#comments").val(); 
+        let type_operation = $("#type_operation").val();
+
+        $.ajax({
+            type: "GET",
+            url: "/function/addOperation.php",
+            cache: 'false',
+            data: {  
+                'wallets': wallets,
+                'category': category,
+                'summ': summ,
+                'counterparty': counterparty,
+                'consumable_services': consumable_services,
+                'points': points,
+                'project': project,
+                'date_send': date_send,
+                'date_add': date_add,
+                'comments': comments,
+                'type_operation': type_operation,
+                },
+            dataType: 'html',
+            beforeSend: function(){
+                $("#addOperation").prop("disabled", true);
+            },
+            success: function(data){
+                result = $.parseJSON(data);
+                if(result.status === "done"){
+                    $(".error-block").html("форма отправленна");
+                }
+                $('#consumption')[0].reset();
+                $("#addOperation").prop("disabled", false);
+
+            }
+        });
+    })
+}; 
+
+</script>

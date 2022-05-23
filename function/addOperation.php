@@ -1,27 +1,33 @@
 <?php 
-// var_dump($_GET);
+include_once $_SERVER['DOCUMENT_ROOT']."/config.php";
+
 
 /** Валідація обовязкових параметрів
  * Обов'язкові параметри
  * wallets
  * sum
  */
-$error = array();
-$important = ['wallets','sum'];
+// $important = ['wallets','sum'];
+
+//TODO: Зробити звязок з перевіркою форм та відправкою відповіді на сторінку
+
 
 if (isset($_GET['wallets'])) {
-    $status = "done";
     $wallets = $_GET['wallets'];
 } else {
-    $error[] = "Виберіть гаманець";
+    // $status[] = "Виберіть гаманець";
+    $status = ['status' => 'Виберіть гаманець'];
+
 }
 
-if (empty($_GET['sum'])) {
-    $error[] = "Введіть суму платежу";
+if (empty($_GET['summ'])) {
+    // $status[] = "Введіть суму платежу";
+    $status = ['status' => 'Введіть суму платежу'];
+
 } else {
-    $status = "done";
-    $sum = $_GET['sum'];
+    $summ = $_GET['summ'];
 }
+
 
 
 /**Валідація пустих блоків
@@ -71,25 +77,24 @@ if(empty($_GET['project'])){
 
 $date_send = $_GET["date_send"];
 $date_add = $_GET["date_add"];
+$type = $_GET["type_operation"];
+$comments = $_GET["comments"];
 
 // Статус форми
 
 if (!empty($error[0])) {
-    var_dump($error);
+    echo($error[0]);
 } else{
-    echo $wallets."<br>";
-    echo $sum."<br>";
-    echo $category."<br>";
-    echo $counterparty."<br>";
-    echo $consumable_services."<br>";
-    echo $points."<br>";
-    echo $project."<br>";
-    echo $date_send."<br>";
-    echo $date_add."<br>";
 
-}
+        if($date_send !== $date_add){
+            $status = '1';
+        }else{
+            $status = '0';
+        };
+};
 
-
-
-
+if(mysqli_query($mysql, " INSERT INTO `transactions` (`id`, `type_operation`, `id_category`, `id_wallet`,`summ`, `id_counterparty`, `id_consumable_services`, `id_points`, `comment`, `data_add`, `data_change`, `status`) VALUES (NULL, '$type', '$category', '$wallets','$summ', '$counterparty', '$consumable_services', '$points', '$comments', '$date_send', '$date_add', '$status')")){
+    $status = ['status' => 'done'];
+};
+    echo json_encode($status);
 ?>
