@@ -1,7 +1,7 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT']."/controler/form/operation.php"; ?>
 <div class="title"><?=$lung['title'];?> <span class="close_form">X</span></div>
 <!-- action="/function/addOperation.php" -->
-<form name='consumption' id="consumption"  method="get">
+<form name='minusOperation' id="minusOperation"  method="get">
     <input hidden name="type_operation" id="type_operation" value="pluse">
     <?php foreach($data as $val => $inputs):?>
     <div class="line-form">

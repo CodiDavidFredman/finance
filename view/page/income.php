@@ -1,4 +1,5 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT']."/controler/page/expenses.php"; ?>
+<!-- <?php include_once $_SERVER['DOCUMENT_ROOT']."/controler/page/income.php"; ?> -->
+
 <div class="title"><?=$lung['title'];?> <span class="close_form">X</span></div>
 <form name='consumption' action="/function/addExpense.php" method="get">
 

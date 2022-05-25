@@ -1,10 +1,10 @@
 <?php
  $lung = [
      'title'=>'Новий дохід',
-     'category'=>'Категорія',
+     'category_add'=>'Категорія',
      'wallets'=>'Рахунок',
-     'consumable_services'=>'Послуга або товар',
-     'counterparty'=>'Контрагент',
+     'consumable_services_add'=>'Послуга або товар',
+     'counterparty_add'=>'Контрагент',
      'points'=>'Мітки',
      'project'=>'Проект',
      'date_send'=>'Дата рахунку',

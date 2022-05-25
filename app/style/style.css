@@ -103,6 +103,7 @@ section.form textarea{
     font-size: var(--input-font-size);
 
 }
+
 .error-block {
     position: fixed;
     right: -100%;
@@ -132,6 +133,9 @@ section.form .add-second-level {
 section.form select{
     cursor: pointer;
     width: 100%!important;
+}
+.pluse , .minus {
+    display: none;
 }
 section.form .block-form {
     cursor: default;
