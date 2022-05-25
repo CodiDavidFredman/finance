@@ -15,7 +15,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/config.php";
 if (isset($_GET['wallets'])) {
     $wallets = $_GET['wallets'];
 } else {
-    // $status[] = "Виберіть гаманець";
     $status = ['status' => 'Виберіть гаманець'];
 
 }
@@ -87,14 +86,18 @@ if (!empty($error[0])) {
 } else{
 
         if($date_send !== $date_add){
-            $status = '1';
+            $statusDB = '1';
         }else{
-            $status = '0';
+            $statusDB = '0';
         };
 };
-
-if(mysqli_query($mysql, " INSERT INTO `transactions` (`id`, `type_operation`, `id_category`, `id_wallet`,`summ`, `id_counterparty`, `id_consumable_services`, `id_points`, `comment`, `data_add`, `data_change`, `status`) VALUES (NULL, '$type', '$category', '$wallets','$summ', '$counterparty', '$consumable_services', '$points', '$comments', '$date_send', '$date_add', '$status')")){
-    $status = ['status' => 'done'];
-};
+if(count($status)>0){
     echo json_encode($status);
+
+}else{
+    if(mysqli_query($mysql, " INSERT INTO `transactions` (`id`, `type_operation`, `id_category`, `id_wallet`,`summ`, `id_counterparty`, `id_consumable_services`, `id_points`, `comment`, `data_add`, `data_change`, `status`) VALUES (NULL, '$type', '$category', '$wallets','$summ', '$counterparty', '$consumable_services', '$points', '$comments', '$date_send', '$date_add', '$statusDB')")){
+        $status = ['status' => 'done'];
+    };
+}
+
 ?>

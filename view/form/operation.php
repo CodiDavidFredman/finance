@@ -109,6 +109,8 @@
                 result = $.parseJSON(data);
                 if(result.status === "done"){
                     $(".error-block").html("форма отправленна");
+                }else{
+                    $(".error-block").html(result.status);
                 }
                 $('#consumption')[0].reset();
                 $("#addOperation").prop("disabled", false);
