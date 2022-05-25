@@ -11,16 +11,15 @@ include_once $_SERVER['DOCUMENT_ROOT']."/config.php";
 
 //TODO: Зробити звязок з перевіркою форм та відправкою відповіді на сторінку
 
-
-if (isset($_GET['wallets'])) {
+$status = array();
+if ($_GET['wallets'] != "") {
     $wallets = $_GET['wallets'];
+
 } else {
     $status = ['status' => 'Виберіть гаманець'];
-
 }
 
 if (empty($_GET['summ'])) {
-    // $status[] = "Введіть суму платежу";
     $status = ['status' => 'Введіть суму платежу'];
 
 } else {
@@ -93,10 +92,11 @@ if (!empty($error[0])) {
 };
 if(count($status)>0){
     echo json_encode($status);
-
 }else{
     if(mysqli_query($mysql, " INSERT INTO `transactions` (`id`, `type_operation`, `id_category`, `id_wallet`,`summ`, `id_counterparty`, `id_consumable_services`, `id_points`, `comment`, `data_add`, `data_change`, `status`) VALUES (NULL, '$type', '$category', '$wallets','$summ', '$counterparty', '$consumable_services', '$points', '$comments', '$date_send', '$date_add', '$statusDB')")){
         $status = ['status' => 'done'];
+         echo json_encode($status);
+
     };
 }
 
