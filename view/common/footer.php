@@ -1,10 +1,11 @@
 </body>
-<?php include_once $_SERVER['DOCUMENT_ROOT']."/view/forms/moneyform.php"; 
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/view/form/moneyform.php"; 
 ?>
 <footer>
     <!-- js jquery 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
     
