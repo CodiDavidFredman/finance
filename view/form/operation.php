@@ -65,7 +65,9 @@
     
     
     <button id="addOperation" type="button"> Відправити</button>
+    <div class="error-block"></div>
 </form>
+
 
 <script>
     if($(document).ready){
@@ -105,33 +107,10 @@
             },
             success: function(data){
                 result = $.parseJSON(data);
-
-                function timerBlock(value, element, className) {
-                    let timer = setInterval(() => {
-                        value
-                        element.addClass(className)
-                        element.addClass('open')
-                    })
-
-                    setTimeout(() => {
-                        clearInterval(timer)
-                        element.removeClass(className)
-                        element.removeClass('open')
-                    }, 3000);
-                }
-
                 if(result.status === "done"){
-                    timerBlock(
-                        $(".error-block").html("форма отправленна"),
-                        $(".error-block"),
-                        'done'
-                    )
+                    $(".error-block").html("форма отправленна");
                 }else{
-                    timerBlock(
-                        $(".error-block").html(result.status),
-                        $(".error-block"),
-                        'mistake'
-                    )
+                    $(".error-block").html(result.status);
                 }
                 $('#consumption')[0].reset();
                 $("#addOperation").prop("disabled", false);
@@ -140,6 +119,5 @@
         });
     })
 }; 
-
 
 </script>
