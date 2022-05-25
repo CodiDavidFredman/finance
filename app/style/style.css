@@ -106,10 +106,11 @@ section.form textarea{
 .error-block {
     position: fixed;
     right: -100%;
+    z-index: 999;
     top: 50px;
     transition: 0.5s;
     color: #fff;
-    padding: 10px 20px;
+    padding: 50px 20px;
     border-radius: 10px 0 0 10px;
 }
 .error-block.open {
