@@ -103,6 +103,24 @@ section.form textarea{
     font-size: var(--input-font-size);
 
 }
+.error-block {
+    position: fixed;
+    right: -100%;
+    top: 50px;
+    transition: 0.5s;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px 0 0 10px;
+}
+.error-block.open {
+    right: 0;
+}
+.error-block.done {
+    background-color: green;
+}
+.error-block.mistake {
+    background-color: red;
+}
 section.form .add-second-level {
     cursor: pointer;
     display: flex;
