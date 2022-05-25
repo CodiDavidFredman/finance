@@ -26,3 +26,4 @@ include_once $_SERVER['DOCUMENT_ROOT']."/controler/common/header.php";
     <button id="add_transfer" class="button_calc"><?= $header_lung['transfer'];?></button>
     </header>
     
+    <?php include_once  $_SERVER['DOCUMENT_ROOT']."/view/common/left_bar.php" ?>
