@@ -20,6 +20,15 @@ function updateForm(arr){
 updateForm(form());
 
 
+<<<<<<< HEAD
+=======
+$(".add-second-level").click(function(){
+   $(".add-second-level").hide();
+   $(".second-level").show();
+})
+
+
+>>>>>>> 62d591ca757934513784f6cbc8b03370295a9f91
 //  Функція по відкриванню змінної дати
 function formOpenDateDeal() {
    const dateDeal = document.querySelectorAll('.date-deal')
@@ -32,6 +41,7 @@ function formOpenDateDeal() {
    })
 }
 formOpenDateDeal()
+<<<<<<< HEAD
 
 //  операція кнопок дохід/витрати/перекази
 function operstionButtons() {
@@ -73,3 +83,48 @@ operstionButtons()
 
 
 
+=======
+
+//  операція кнопок дохід/витрати/перекази
+function operstionButtons() {
+
+   const sectionForm = document.querySelector('section.form')
+   const buttonsCalc = document.querySelectorAll('.button_calc')
+   const formCalc = document.querySelector('.form_calculations')
+
+   //  відкриваємо попап форму
+   function openForm() {
+      sectionForm.style.display = 'flex'
+   }
+   //  закриваємо попап форму
+   function closeForm(e) {
+      let elTraget = e.target
+
+      if (elTraget.classList.contains('close_form') ) {
+         sectionForm.style.display = 'none';
+      } else if (elTraget.closest('.block-form')) {
+         return
+      } else {
+         sectionForm.style.display = 'none';
+      }
+   }
+
+   // вішаємо слухачі на кнопки
+   buttonsCalc.forEach(button => {
+      button.addEventListener('click', openForm)
+   })
+
+   //  вішаємо слухач на форму
+   formCalc.addEventListener('click', e => closeForm(e))
+}
+operstionButtons()
+
+
+
+
+
+
+
+
+// Валідація форми - доходи (consumption)
+>>>>>>> 62d591ca757934513784f6cbc8b03370295a9f91

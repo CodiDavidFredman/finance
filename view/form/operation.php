@@ -65,8 +65,15 @@
     
     
     <button id="addOperation" type="button"> Відправити</button>
+<<<<<<< HEAD
 </form>
 
+=======
+    <div class="error-block"></div>
+</form>
+
+
+>>>>>>> 62d591ca757934513784f6cbc8b03370295a9f91
 <script>
     if($(document).ready){
         $("#addOperation").on('click',function(){
@@ -105,6 +112,7 @@
             },
             success: function(data){
                 result = $.parseJSON(data);
+<<<<<<< HEAD
 
                 function timerBlock(value, element, className) {
                     let timer = setInterval(() => {
@@ -132,6 +140,12 @@
                         $(".error-block"),
                         'mistake'
                     )
+=======
+                if(result.status === "done"){
+                    $(".error-block").html("форма отправленна");
+                }else{
+                    $(".error-block").html(result.status);
+>>>>>>> 62d591ca757934513784f6cbc8b03370295a9f91
                 }
                 $('#consumption')[0].reset();
                 $("#addOperation").prop("disabled", false);
@@ -141,5 +155,8 @@
     })
 }; 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 62d591ca757934513784f6cbc8b03370295a9f91
 </script>

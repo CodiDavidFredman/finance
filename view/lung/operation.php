@@ -10,9 +10,9 @@
      'date_send'=>'Дата рахунку',
      'date_add'=>'Дата оплати',
      'sum'=>'Сума, $',
-     'text_date_deal'=>'some text',
-
-
+     'text_date_deal'=>'Дата угоди відрізняється',
+     'add_project'=>'Додати проект, тег, коментар',
+     'text_comments'=>"Коментарій",
  ]
 
 
