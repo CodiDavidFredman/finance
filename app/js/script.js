@@ -39,58 +39,52 @@ function formOpenDateDeal() {
 }
 formOpenDateDeal()
 
-// //  операція кнопок дохід/витрати/перекази
-// function operstionButtons() {
+//  операція кнопок дохід/витрати/перекази
+function operstionButtons() {
 
-//    const sectionForm = document.querySelector('section.form')
-//    const buttonsCalc = document.querySelectorAll('.button_calc')
-//    const formCalc = document.querySelector('.form_calculations')
+   const sectionForm = document.querySelector('section.form')
+   const buttonsCalc = document.querySelectorAll('.button_calc')
+   const formCalc = document.querySelector('.form_calculations')
 
-//    //  відкриваємо попап форму
-//    function openForm() {
-//       sectionForm.style.display = 'flex'
-//    }
-//    //  закриваємо попап форму
-//    function closeForm(e) {
-//       let elTraget = e.target
+   //  відкриваємо попап форму
+   function openForm() {
+      sectionForm.style.display = 'flex'
+   }
+   //  закриваємо попап форму
+   function closeForm(e) {
+      let elTraget = e.target
 
-//       if (elTraget.classList.contains('close_form') ) {
-//          sectionForm.style.display = 'none';
-//       } else if (elTraget.closest('.block-form')) {
-//          return
-//       } else {
-//          sectionForm.style.display = 'none';
-//       }
-//    }
+      if (elTraget.classList.contains('close_form') ) {
+         sectionForm.style.display = 'none';
+      } else if (elTraget.closest('.block-form')) {
+         return
+      } else {
+         sectionForm.style.display = 'none';
+      }
+   }
 
-//    // вішаємо слухачі на кнопки
-//    buttonsCalc.forEach(button => {
-//       button.addEventListener('click', openForm)
-//    })
+   // вішаємо слухачі на кнопки
+   buttonsCalc.forEach(button => {
+      button.addEventListener('click', openForm)
+   })
 
-//    //  вішаємо слухач на форму
-//    formCalc.addEventListener('click', e => closeForm(e))
-// }
-// operstionButtons()
-
-
-
-
-
-
+   //  вішаємо слухач на форму
+   formCalc.addEventListener('click', e => closeForm(e))
+}
+operstionButtons()
 
 
 // Валідація форми - доходи (consumption)
 
 
-$("#add_income").click(function(){
-   $("section.form").css("display","flex");
-   $(".block-form.plus").css("display","block");
+// $("#add_income").click(function(){
+//    $("section.form").css("display","flex");
+//    $(".block-form.plus").css("display","block");
 
-   $(".close_form").click(function(){
+//    $(".close_form").click(function(){
 
-       $("section.form").css("display","none");
+//        $("section.form").css("display","none");
 
-   });
+//    });
    
-});
+// });
