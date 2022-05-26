@@ -111,7 +111,7 @@ section.form textarea{
     top: 50px;
     transition: 0.5s;
     color: #fff;
-    padding: 50px 20px;
+    padding: 10px 20px;
     border-radius: 10px 0 0 10px;
 }
 .error-block.open {
