@@ -1,0 +1,59 @@
+#left_bar {
+    max-width: 500px;width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 22px 24px;
+    background-color: #f4f4f4;
+    border-radius: 30px;
+    text-align: left;;
+}
+.aside_block + .aside_block {
+    border-top: 1px solid #000;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.aside_block-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.aside_block-inner + .aside_block-inner {
+    margin-top: 20px;
+}
+.aside_total-finance {
+    display: block;
+}
+.aside_total-finance p + p {
+    font-size: 24px;
+    font-weight: 700;
+    padding-top: 10px;
+}
+.aside_title {
+    font-weight: 600;
+}
+.aside_cat-income .aside_total-sum {
+    font-weight: 600;
+}
+.future_counts .aside_block-inner:nth-child(2) span:first-child{
+    display: flex;
+    align-items: center;
+}
+.aside_block-arrow svg {
+    margin-left: 5px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+.future_counts .aside_block-inner:last-child {
+    position: relative;
+    padding-bottom: 20px;
+}
+.aside_cat-income {
+    position: relative;
+}
+.aside_cat-income::after {
+    position: absolute;
+    content: '(з урах. Майбутніх платежів)';
+    bottom: 0;
+    left: 0;
+}
